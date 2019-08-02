@@ -19,6 +19,59 @@
  @import "font-awesome";
  @import "homestyles";
 
- body{
- font-family: 'Monserrat', sans-serif;
- }
+.noblt {
+	list-style: none;
+	font-size: 16px;
+}
+
+.fav {
+	height: 40px;
+	width: 40px;
+}
+
+.nav-item {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+a {
+	font-family: 'Nunito Sans', sans-serif;
+	text-decoration: none !important;
+	color: #194189;
+}
+
+a:hover {
+  background: none !important;
+}
+
+a:visited {
+  color: black !important;
+}
+
+body {
+	background-color: #EDF8FF;
+}
+
+footer {
+	background-color: #17a2b8;
+} 
+
+#cprt {
+	background-color: #17a2b8;
+	color: white;
+}
+
+.list-group-item {
+    background-color: #17a2b8;
+    border: 0px solid rgba(0,0,0,0);
+    font-size: 16px;
+}
+
+.center {
+	text-align: center;
+}
+
+p {
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 16px;
+}

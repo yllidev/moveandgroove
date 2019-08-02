@@ -1,25 +1,102 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Moveandgroove</title>
+    <title>Fitness Tracker</title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
+  <link rel="icon" href="http://timeoutsports.biz/wp-content/uploads/2018/02/cropped-time-out-sports-favicon.png" type="image/png" sizes="16x16">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-
   </head>
 
   <body>
-    <%= render "layouts/navigation" %>
-    <%= yield %>
-<%= render "layouts/footer" %>
+    <nav class="navbar navbar-expand-md navbar-dark bg-info">
+  <a class="navbar-brand" href="/"><img class="fav" src="http://timeoutsports.biz/wp-content/uploads/2018/02/cropped-time-out-sports-favicon.png"> Move and Groove</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto noblt">      
+      <li><%= link_to "About", about_path %></li>
+    </ul>
+  <ul class="nav navbar-nav navbar-right">
+    <% if user_signed_in? %>
+    <li class="nav-item noblt">
+        <i class="fa fa-tasks"></i>
+      <%= link_to "My Activities", activities_path %>
+      </li>
+      <li class="nav-item noblt">
+        <i class="fa fa-user-circle"></i>
+      <%= link_to "Account Info", edit_user_registration_path %>
+      </li>
+      <li class="nav-item noblt">
+        <i class="fa fa-sign-out"></i>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      </li>
+    <% else %>
+      <li class="nav-item noblt">
+        <i class="fa fa-user-plus" aria-hidden="true"></i>
+      <%= link_to "Sign Up", new_user_registration_path %>
+      </li>
+      <li class="nav-item noblt">
+        <i class="fa fa-sign-in" aria-hidden="true"></i>
+      <%= link_to "Login", new_user_session_path %>
+      </li>
+    <% end %>
+  </ul>
+  </div>
+</nav>
+
+<div class="container">
   
+    <%= yield %>    
+
+  </div>
+
+
+<footer class="row">
+    <div class="col-6 col-md-5 col-lg-4">
+      <ul class="list-group list-group-flush footer-links">
+          
+        <% if user_signed_in? %>
+        <li class="list-group-item">
+          <i class="fa fa-tasks"></i>
+            <%= link_to "My Activities", activities_path %>
+        </li>
+          <li class="list-group-item">
+            <i class="fa fa-user-circle"></i>
+              <%= link_to "Account Info", edit_user_registration_path %>
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-sign-out"></i>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class="list-group-item">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+              <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+              <%= link_to "Login", new_user_session_path %>
+          </li>
+        <% end %>
+        </ul>
+
+    </div>
+
+    <div class="col-6 col-md-5 offset-md-2 col-lg-4 offset-lg-4">
+      <ul class="list-group ml-auto footer-links">
+        <li class="list-group-item border-bottom"><a href="https://www.self.com/topic/fitness-news" target="_blank">SELF - Fitness and Exercise</a></li>
+        <li class="list-group-item border-bottom"><a href="https://www.sciencedaily.com/news/health_medicine/fitness/" target="_blank">Science Daily - Fitness and Wellness</a></li>
+        <li class="list-group-item"><a href="https://www.health.com/fitness" target="_blank">Health Magazine - Fitness and Health</a></li>
+      </ul>
+    </div>
+  </footer> 
+ <div id="cprt" align="center">©2019 Move and Groove Inc.</div>
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

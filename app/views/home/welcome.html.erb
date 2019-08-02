@@ -1,1 +1,79 @@
-<h1> Welcome page</h1>
+<div class="jumbotron">
+  <h1 class="display-4">Track your fitness activities and stay healthy!</h1>
+  <hr class="my-4">
+  <% if user_signed_in? %>
+        <li class="btn btn-primary btn-lg">
+        <%= link_to "My Activities", fitness_activities_path %>
+        </li>
+        <% else %>
+          <div class="btn btn-primary btn-lg"><%= link_to "Login", new_user_session_path %></div>
+  <% end %>
+  
+</div>
+
+<div class="container">
+
+<div class="row">
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card shadow-sm">
+                <img class="card-img-top" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/woman-walking-on-a-path-royalty-free-image-503818820-1538171480.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Walking</h5>
+                  <p class="card-text">The cardiovascular benefits of walking are biologically plausible; like other forms of regular moderate exercise, walking improves cardiac risk factors such as cholesterol, blood pressure, diabetes, obesity, vascular stiffness and inflammation, and mental stress.</p>
+                  <a href="https://www.health.harvard.edu/staying-healthy/walking-your-steps-to-health" class="btn btn-info" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card shadow-sm">
+                <img class="card-img-top" src="https://www.silversurfers.com/wp-content/uploads/2013/12/bigstock-Female-swimmer-wearing-United-503937201.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Swimming</h5>
+                  <p class="card-text">Swimming is a great workout because you need to move your whole body against the resistance of the water. Swimming is a good all-round activity because it: keeps your heart rate up but takes some of the impact stress off your body. builds endurance, muscle strength and cardiovascular fitness.</p>
+                  <a href="https://www.betterhealth.vic.gov.au/health/healthyliving/swimming-health-benefits" class="btn btn-info" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card shadow-sm">
+                <img class="card-img-top" src="https://www.healthyfamiliesbc.ca/sites/hfbcprox-prod.health.gov.bc.ca/files/styles/large/public/thumbnails/2013_07_25_TheHealthBenefitsofHiking.jpg?itok=702rftDM" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Hiking</h5>
+                  <p class="card-text">Hiking is a powerful cardio workout that can lower your risk of heart disease, improve your blood pressure and blood sugar levels, boost bone density, since walking is a weight-bearing exercise, strengthen your core, improve balance and help control your weight.</p>
+                  <a href="https://www.webmd.com/fitness-exercise/features/hiking-body-mind" class="btn btn-info" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card shadow-sm">
+                <img class="card-img-top" src="https://www.thehealthsite.com/wp-content/uploads/2013/01/woman-running-marathon-page-upload.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Running</h5>
+                  <p class="card-text">Since it improves aerobic fitness, running is a great way to help improve cardiovascular health. Plus, it burns calories and can build strength, among other things. There's also a long list of psychological benefits runners gain from their sport.</p>
+                  <a href="https://www.businessinsider.com/health-benefits-of-running-2018-4" class="btn btn-info" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card shadow-sm">
+                <img class="card-img-top" src="https://i2.wp.com/yruha.blog/wp-content/uploads/2018/11/bike-mountain-mountain-biking-trail-163491-1.jpeg?resize=730%2C486&ssl=1" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Biking</h5>
+                  <p class="card-text">Cycling improves strength, balance and coordination. It may also help to prevent falls and fractures. Riding a bike is an ideal form of exercise if you have osteoarthritis, because it is a low-impact exercise that places little stress on joints.</p>
+                  <a href="https://www.betterhealth.vic.gov.au/health/healthyliving/cycling-health-benefits" class="btn btn-info" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card shadow-sm">
+                <img class="card-img-top" src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/701/p-1-cardio-workout-1516282523.jpg" alt="">
+                <div class="card-body">
+                  <h5 class="card-title">Cardio</h5>
+                  <p class="card-text">Aerobic exercise, also known as “cardio” exercise, uses repetitive contraction of large muscle groups to get your heart beating faster and is the most beneficial type of exercise for your cardiovascular system. Regular cardio workouts can reduce the risk of heart disease and diabetes and lower your blood pressure and cholesterol.</p>
+                  <a href="https://utswmed.org/medblog/heart-cardio-workouts/" class="btn btn-info" target="_blank">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>	  
+	</div>

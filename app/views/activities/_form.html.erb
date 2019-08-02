@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <% @name = %w[Running Walking Cycling Swimming Cardio Hiking Football Basketball Volleyball Tennis]%>
+  <div class="form-group">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.select :name, @name,{},{class:'form-control'} %>
   </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
+  <div class="form-group">
+    <%= form.label :activity_Date %>
+    <%= form.date_select :date, class:'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :duration %>
-    <%= form.number_field :duration %>
+    <%= form.number_field :duration, class:'form-control' %>
   </div>
+
+  
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Save Activity",:class => 'btn btn-info' %>
   </div>
 <% end %>
