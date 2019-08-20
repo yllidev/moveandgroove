@@ -1,6 +1,7 @@
 class ActivitiesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_activity, only: [:show, :edit, :update, :destroy]
+  before_action :set_current_user
 
   # GET /activities
   # GET /activities.json
@@ -11,6 +12,9 @@ class ActivitiesController < ApplicationController
   # GET /activities/1
   # GET /activities/1.json
   def show
+    unless User.current.id == Activity.find(params[:id]).user_id
+      redirect_to root_url, :alert =>'You are not authorize to access this record' 
+    end
   end
 
   # GET /activities/new
@@ -20,6 +24,10 @@ class ActivitiesController < ApplicationController
 
   # GET /activities/1/edit
   def edit
+    @activity = Activity.find(params[:id])
+    unless User.current.id == @activity.user_id
+      redirect_to root_url, :alert =>'You are not authorize to access this record' 
+    end
   end
 
   # POST /activities

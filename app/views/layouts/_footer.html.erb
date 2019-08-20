@@ -1,0 +1,38 @@
+<footer class="row">
+    <div class="col-6 col-md-5 col-lg-4">
+      <ul class="list-group list-group-flush footer-links">
+          
+        <% if user_signed_in? %>
+        <li class="list-group-item">
+          <i class="fa fa-tasks"></i>
+            <%= link_to "My Activities", activities_path %>
+        </li>
+          <li class="list-group-item">
+            <i class="fa fa-user-circle"></i>
+              <%= link_to "Account Info", edit_user_registration_path %>
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-sign-out"></i>
+              <%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li class="list-group-item">
+            <i class="fa fa-user-plus" aria-hidden="true"></i>
+              <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+          <li class="list-group-item">
+            <i class="fa fa-sign-in" aria-hidden="true"></i>
+              <%= link_to "Login", new_user_session_path %>
+          </li>
+        <% end %>
+        </ul>
+
+    </div>
+
+    <div class="col-6 col-md-5 offset-md-2 col-lg-4 offset-lg-4">
+      <ul class="list-group ml-auto footer-links">
+        <li class="list-group-item border-bottom"><a href="https://www.self.com/topic/fitness-news" target="_blank">SELF - Fitness and Exercise</a></li>
+        <li class="list-group-item border-bottom"><a href="https://www.sciencedaily.com/news/health_medicine/fitness/" target="_blank">Science Daily - Fitness and Wellness</a></li>
+        <li class="list-group-item"><a href="https://www.health.com/fitness" target="_blank">Health Magazine - Fitness and Health</a></li>
+      </ul>
+    </div>
+  </footer> 
